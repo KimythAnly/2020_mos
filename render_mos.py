@@ -50,7 +50,7 @@ def main():
     html = template.render(
         page_title=f"語音品質實驗 {args.form_id}",
         form_url="https://script.google.com/macros/s/AKfycbxpNFr1U6Jdy6BB10fwVR5Idy_wAdVSxgCs38oT00AAcg4WGvco/exec",
-        form_id=0,
+        form_id=args.form_id,
         # questions=[
         #     {
         #         "title": "問題 1",
