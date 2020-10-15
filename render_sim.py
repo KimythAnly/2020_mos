@@ -34,6 +34,8 @@ def gen_questions(form_id=0):
     # 40 / 2 = 20
     lst = lst1 + lst2 + lst1[:20] + lst2[:20]
 
+    random.shuffle(lst)
+
     ques = []
 
     for i in range(10):
@@ -44,7 +46,6 @@ def gen_questions(form_id=0):
         random.shuffle(choice)
         ques.append([ref, choice])
 
-    random.shuffle(ques)
     for i, q in enumerate(ques):
         ref, choice = q
         ret.append(
