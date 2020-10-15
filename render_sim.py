@@ -70,7 +70,7 @@ def main():
 
     html = template.render(
         page_title=f"語者相似度實驗 {args.form_id}",
-        form_url="https://script.google.com/macros/s/AKfycbxpNFr1U6Jdy6BB10fwVR5Idy_wAdVSxgCs38oT00AAcg4WGvco/exec",
+        form_url="https://script.google.com/macros/s/AKfycbwbE8oI-Zvh8Uj2httBe-lW-evKIt4uGmASofDmA8hqSWF6dNQ/exec",
         form_id=args.form_id,
         choices=["A", "B"],
         # questions=[
