@@ -61,6 +61,7 @@ def main():
     """Main function."""
     loader = FileSystemLoader(searchpath="./templates")
     env = Environment(loader=loader)
+    env.globals.update(zip=zip)
     template = env.get_template("sim.html.jinja2")
 
     args = get_args()
@@ -70,6 +71,7 @@ def main():
         page_title=f"語者相似度實驗 {args.form_id}",
         form_url="https://script.google.com/macros/s/AKfycbxpNFr1U6Jdy6BB10fwVR5Idy_wAdVSxgCs38oT00AAcg4WGvco/exec",
         form_id=args.form_id,
+        choices=["A", "B"],
         # questions=[
         #     {
         #         "title": "問題 1",
@@ -84,7 +86,6 @@ def main():
         # ]
         questions=questions
     )
-    # print(questions)
     print(html)
 
 
