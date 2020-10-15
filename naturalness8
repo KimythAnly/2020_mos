@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -51,7 +51,7 @@
             <div class="card-header">問題1</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/2enc/p360_018_to_p360_018.wav">
+                    <audio controls src="data/proposed/p361_002_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -82,7 +82,7 @@
             <div class="card-header">問題2</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/melgan/p360_018.wav">
+                    <audio controls src="data/1enc/p334_007_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -113,7 +113,7 @@
             <div class="card-header">問題3</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/2enc/p364_017_to_p360_018.wav">
+                    <audio controls src="data/1enc/p364_017_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -144,7 +144,7 @@
             <div class="card-header">問題4</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/1enc/p360_018_to_p360_018.wav">
+                    <audio controls src="data/2enc/p364_017_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -175,7 +175,7 @@
             <div class="card-header">問題5</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/2enc/p343_004_to_p360_018.wav">
+                    <audio controls src="data/2enc/p362_010_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -206,7 +206,7 @@
             <div class="card-header">問題6</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/1enc/p362_010_to_p360_018.wav">
+                    <audio controls src="data/1enc/p343_004_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -237,7 +237,7 @@
             <div class="card-header">問題7</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/1enc/p334_007_to_p360_018.wav">
+                    <audio controls src="data/1enc/p361_002_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -268,7 +268,7 @@
             <div class="card-header">問題8</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/2enc/p362_010_to_p360_018.wav">
+                    <audio controls src="data/proposed/p364_017_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -299,7 +299,7 @@
             <div class="card-header">問題9</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/2enc/p334_007_to_p360_018.wav">
+                    <audio controls src="data/1enc/p360_018_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -330,7 +330,7 @@
             <div class="card-header">問題10</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/proposed/p364_017_to_p360_018.wav">
+                    <audio controls src="data/2enc/p360_018_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -361,7 +361,7 @@
             <div class="card-header">問題11</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/proposed/p361_002_to_p360_018.wav">
+                    <audio controls src="data/melgan/p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -392,7 +392,7 @@
             <div class="card-header">問題12</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/2enc/p361_002_to_p360_018.wav">
+                    <audio controls src="data/proposed/p362_010_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -454,7 +454,7 @@
             <div class="card-header">問題14</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/1enc/p343_004_to_p360_018.wav">
+                    <audio controls src="data/proposed/p334_007_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -485,7 +485,7 @@
             <div class="card-header">問題15</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/1enc/p361_002_to_p360_018.wav">
+                    <audio controls src="data/2enc/p334_007_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -516,7 +516,7 @@
             <div class="card-header">問題16</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/proposed/p334_007_to_p360_018.wav">
+                    <audio controls src="data/2enc/p361_002_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -547,7 +547,7 @@
             <div class="card-header">問題17</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/1enc/p364_017_to_p360_018.wav">
+                    <audio controls src="data/1enc/p362_010_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
@@ -578,7 +578,7 @@
             <div class="card-header">問題18</div>
             <div class="card-body">
                 <p>
-                    <audio controls src="data/proposed/p362_010_to_p360_018.wav">
+                    <audio controls src="data/2enc/p343_004_to_p360_018.wav">
                         Your browser does not support the audio element.
                     </audio>
                 </p>
