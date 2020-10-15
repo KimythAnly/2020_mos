@@ -59,6 +59,7 @@ def gen_questions(form_id=0):
 
 def main():
     """Main function."""
+    random.seed(0)
     loader = FileSystemLoader(searchpath="./templates")
     env = Environment(loader=loader)
     template = env.get_template("sim.html.jinja2")
