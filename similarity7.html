@@ -1,0 +1,435 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>語者相似度實驗 7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <h1 class="display-4">語者判別實驗</h1>
+    <p class="lead">判斷兩份語音是否出自同一個人</p>
+    <hr class="my-4">
+    <p>
+        感謝您參與本次實驗！
+    </p>
+    <p>
+        在這個實驗中，我們使用電腦合成及轉換人類語音。每一題都有一個參考音檔和兩個選項音檔。
+        請使用耳機聽完後，根據選項音檔和參考音檔的語者相似度作答（僅考慮說話者的音色，不須考慮語句內容）。
+    </p>
+    <p>
+        評分標準為：
+        <ul>
+            <li>A 比較像 (A is more similar)</li>
+            <li>B 比較像 (B is more similar)</li>
+            <li>不大確定 (same, not sure)</li>
+        </ul>
+    </p>
+
+        </div>
+    </div>
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbxpNFr1U6Jdy6BB10fwVR5Idy_wAdVSxgCs38oT00AAcg4WGvco/exec" method="GET" onsubmit="return preventRepeatedSubmission();">
+            <div class="form-group">
+                <label for="name">姓名：</label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+                <small class="form-text text-muted">必填*</small>
+            </div>
+            <div class="form-group">
+                <label for="mail">電子郵件：</label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail">
+                <small class="form-text text-muted">如果中獎，我們將以電子郵件通知您</small>
+            </div>
+            
+    
+        <div class="card form-group">
+            <div class="card-header">問題1</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="data/melgan/p361_002/p360_018/p360_018">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                
+                    <p>
+                        <audio controls src="data/1enc/p364_017_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p>
+                        <audio controls src="data/2enc/p364_017_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_1" value="1" required>
+                    <label class="form-check-label" for="q1_1">A 比較像 (A is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_2" value="2" required>
+                    <label class="form-check-label" for="q1_2">B 比較像 (B is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_3" value="3" required>
+                    <label class="form-check-label" for="q1_3">不大確定 (not sure)</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header">問題2</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="data/melgan/p361_002/p360_018">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                
+                    <p>
+                        <audio controls src="data/1enc/p361_002_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p>
+                        <audio controls src="data/2enc/p361_002_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_1" value="1" required>
+                    <label class="form-check-label" for="q2_1">A 比較像 (A is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_2" value="2" required>
+                    <label class="form-check-label" for="q2_2">B 比較像 (B is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_3" value="3" required>
+                    <label class="form-check-label" for="q2_3">不大確定 (not sure)</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header">問題3</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="data/melgan/p361_002/p360_018/p360_018/p361_002/p360_018/p360_018/p361_002/p360_018/p361_002/p360_018">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                
+                    <p>
+                        <audio controls src="data/proposed/p361_002_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p>
+                        <audio controls src="data/1enc/p361_002_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_1" value="1" required>
+                    <label class="form-check-label" for="q3_1">A 比較像 (A is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_2" value="2" required>
+                    <label class="form-check-label" for="q3_2">B 比較像 (B is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_3" value="3" required>
+                    <label class="form-check-label" for="q3_3">不大確定 (not sure)</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header">問題4</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="data/melgan/p361_002/p360_018/p360_018/p361_002/p360_018">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                
+                    <p>
+                        <audio controls src="data/1enc/p361_002_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p>
+                        <audio controls src="data/proposed/p361_002_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_1" value="1" required>
+                    <label class="form-check-label" for="q4_1">A 比較像 (A is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_2" value="2" required>
+                    <label class="form-check-label" for="q4_2">B 比較像 (B is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_3" value="3" required>
+                    <label class="form-check-label" for="q4_3">不大確定 (not sure)</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header">問題5</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="data/melgan/p361_002/p360_018/p360_018/p361_002/p360_018/p360_018">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                
+                    <p>
+                        <audio controls src="data/1enc/p364_017_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p>
+                        <audio controls src="data/proposed/p364_017_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_1" value="1" required>
+                    <label class="form-check-label" for="q5_1">A 比較像 (A is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_2" value="2" required>
+                    <label class="form-check-label" for="q5_2">B 比較像 (B is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_3" value="3" required>
+                    <label class="form-check-label" for="q5_3">不大確定 (not sure)</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header">問題6</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="data/melgan/p361_002/p360_018/p360_018/p361_002/p360_018/p360_018/p361_002">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                
+                    <p>
+                        <audio controls src="data/1enc/p343_004_to_p361_002.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p>
+                        <audio controls src="data/2enc/p343_004_to_p361_002.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_1" value="1" required>
+                    <label class="form-check-label" for="q6_1">A 比較像 (A is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_2" value="2" required>
+                    <label class="form-check-label" for="q6_2">B 比較像 (B is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_3" value="3" required>
+                    <label class="form-check-label" for="q6_3">不大確定 (not sure)</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header">問題7</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="data/melgan/p361_002/p360_018/p360_018/p361_002">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                
+                    <p>
+                        <audio controls src="data/proposed/p343_004_to_p361_002.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p>
+                        <audio controls src="data/1enc/p343_004_to_p361_002.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7_1" value="1" required>
+                    <label class="form-check-label" for="q7_1">A 比較像 (A is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7_2" value="2" required>
+                    <label class="form-check-label" for="q7_2">B 比較像 (B is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7_3" value="3" required>
+                    <label class="form-check-label" for="q7_3">不大確定 (not sure)</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header">問題8</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="data/melgan/p361_002">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                
+                    <p>
+                        <audio controls src="data/2enc/p343_004_to_p361_002.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p>
+                        <audio controls src="data/1enc/p343_004_to_p361_002.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8" id="q8_1" value="1" required>
+                    <label class="form-check-label" for="q8_1">A 比較像 (A is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8" id="q8_2" value="2" required>
+                    <label class="form-check-label" for="q8_2">B 比較像 (B is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8" id="q8_3" value="3" required>
+                    <label class="form-check-label" for="q8_3">不大確定 (not sure)</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header">問題9</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="data/melgan/p361_002/p360_018/p360_018/p361_002/p360_018/p360_018/p361_002/p360_018">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                
+                    <p>
+                        <audio controls src="data/1enc/p361_002_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p>
+                        <audio controls src="data/2enc/p361_002_to_p360_018.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9" id="q9_1" value="1" required>
+                    <label class="form-check-label" for="q9_1">A 比較像 (A is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9" id="q9_2" value="2" required>
+                    <label class="form-check-label" for="q9_2">B 比較像 (B is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9" id="q9_3" value="3" required>
+                    <label class="form-check-label" for="q9_3">不大確定 (not sure)</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card form-group">
+            <div class="card-header">問題10</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="data/melgan/p361_002/p360_018/p360_018/p361_002/p360_018/p360_018/p361_002/p360_018/p361_002">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                
+                    <p>
+                        <audio controls src="data/proposed/p343_004_to_p361_002.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                    <p>
+                        <audio controls src="data/1enc/p343_004_to_p361_002.wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q10" id="q10_1" value="1" required>
+                    <label class="form-check-label" for="q10_1">A 比較像 (A is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q10" id="q10_2" value="2" required>
+                    <label class="form-check-label" for="q10_2">B 比較像 (B is more similar)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q10" id="q10_3" value="3" required>
+                    <label class="form-check-label" for="q10_3">不大確定 (not sure)</label>
+                </div>
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="7" hidden>
+            <input type="text" name="thank" value="再次謝謝您參與本次實驗！" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="提交結果" id="submitBtn">
+            <p class="text-muted">
+                <small>如果提交結果時發現繳不出去，請回頭檢查是否有填入姓名、是否每一題都有作答到，謝謝。</small>
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; 台大語音實驗室</p>
+    </div>
+
+    <script type="text/javascript">
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 5000);
+            return true;
+        };
+    </script>
+</body>
+
+</html>

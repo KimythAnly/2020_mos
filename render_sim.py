@@ -15,26 +15,43 @@ import glob
 import random
 def gen_questions(form_id=0):
     ret = []
-    files = []
-    lst1 = sorted(glob.glob('data/1enc/*.wav'))
-    lst2 = sorted(glob.glob('data/2enc/*.wav'))
-    lst3 = sorted(glob.glob('data/proposed/*.wav'))
-    lst4 = sorted(glob.glob('data/melgan/*.wav'))
-    # 180 - 36*3 - 12 = 60
-    # 60 / 3 = 20
-    lst = lst1 + lst2 + lst3 + lst4 + lst4 + lst1[:20] + lst2[:20] + lst3[:20]
-    for i in range(18):
-        j = (form_id + i*10) % len(lst)
-        files.append(lst[j])
-
-    random.shuffle(files)
-    for i, f in enumerate(files):
-        method = os.path.dirname(f)
+    lst = sorted(glob.glob('data/1enc/*.wav'))
+    lst1 = []
+    lst2 = []
+    comp = ['data/1enc', 'data/2enc', 'data/proposed']
+    ref = 'data/melgan'
+    
+    for f in lst:
         basename = os.path.basename(f)
+        source = basename.split('.')[0].split('_to_')[0]
+        target = basename.split('.')[0].split('_to_')[1]
+        if source == target:
+            continue
+        lst1.append([basename, 1, target])
+        lst2.append([basename, 2, target])
+    
+    # 100 - 30*2 = 40
+    # 40 / 2 = 20
+    lst = lst1 + lst2 + lst1[:20] + lst2[:20]
+
+    ques = []
+
+    for i in range(10):
+        j = (form_id + i*10) % len(lst)
+        basename, comp_id, target = lst[j]
+        ref = os.path.join(ref, target)
+        choice = [os.path.join(comp[0], basename), os.path.join(comp[comp_id], basename)]
+        random.shuffle(choice)
+        ques.append([ref, choice])
+
+    random.shuffle(ques)
+    for i, q in enumerate(ques):
+        ref, choice = q
         ret.append(
             {
                 "title": f"問題{i+1}",
-                "audio_path": f,
+                "ref_path": ref,
+                "audio_paths": choice,
                 "name": f"q{i+1}"
             }
         )
@@ -44,13 +61,13 @@ def main():
     """Main function."""
     loader = FileSystemLoader(searchpath="./templates")
     env = Environment(loader=loader)
-    template = env.get_template("mos.html.jinja2")
+    template = env.get_template("sim.html.jinja2")
 
     args = get_args()
     questions = gen_questions(form_id=args.form_id)
 
     html = template.render(
-        page_title=f"語音品質實驗 {args.form_id}",
+        page_title=f"語者相似度實驗 {args.form_id}",
         form_url="https://script.google.com/macros/s/AKfycbxpNFr1U6Jdy6BB10fwVR5Idy_wAdVSxgCs38oT00AAcg4WGvco/exec",
         form_id=args.form_id,
         # questions=[
@@ -67,6 +84,7 @@ def main():
         # ]
         questions=questions
     )
+    # print(questions)
     print(html)
 
 
