@@ -14,11 +14,11 @@ def main():
     env = Environment(loader=loader)
     template = env.get_template("mos.html.jinja2")
 
-    questions = gen_question()
+    questions = gen_questions()
 
     html = template.render(
         page_title="語音品質實驗 0",
-        form_url="http://localhost:5488",
+        form_url="http://localhost:8888",
         form_id=0,
         # questions=[
         #     {
