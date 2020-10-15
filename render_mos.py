@@ -18,7 +18,7 @@ def main():
 
     html = template.render(
         page_title="語音品質實驗 0",
-        form_url="http://localhost:8888",
+        form_url="https://script.google.com/macros/s/AKfycbwybc5uUTY1Djy8Y8ybQwQaHVZteM0R5CYWuzpWPvtN05su0fr_/exec",
         form_id=0,
         # questions=[
         #     {
