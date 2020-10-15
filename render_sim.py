@@ -19,7 +19,7 @@ def gen_questions(form_id=0):
     lst1 = []
     lst2 = []
     comp = ['data/1enc', 'data/2enc', 'data/proposed']
-    ref = 'data/melgan'
+    refdir = 'data/melgan'
     
     for f in lst:
         basename = os.path.basename(f)
@@ -39,7 +39,7 @@ def gen_questions(form_id=0):
     for i in range(10):
         j = (form_id + i*10) % len(lst)
         basename, comp_id, target = lst[j]
-        ref = os.path.join(ref, target)
+        ref = os.path.join(refdir, target)
         choice = [os.path.join(comp[0], basename), os.path.join(comp[comp_id], basename)]
         random.shuffle(choice)
         ques.append([ref, choice])
