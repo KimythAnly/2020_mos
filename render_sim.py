@@ -39,7 +39,7 @@ def gen_questions(form_id=0):
     for i in range(10):
         j = (form_id + i*10) % len(lst)
         basename, comp_id, target = lst[j]
-        ref = os.path.join(refdir, target)
+        ref = os.path.join(refdir, target+'.wav')
         choice = [os.path.join(comp[0], basename), os.path.join(comp[comp_id], basename)]
         random.shuffle(choice)
         ques.append([ref, choice])
@@ -59,7 +59,6 @@ def gen_questions(form_id=0):
 
 def main():
     """Main function."""
-    random.seed(0)
     loader = FileSystemLoader(searchpath="./templates")
     env = Environment(loader=loader)
     template = env.get_template("sim.html.jinja2")
@@ -90,4 +89,5 @@ def main():
 
 
 if __name__ == "__main__":
+    random.seed(0)
     main()
