@@ -57,8 +57,9 @@ def main():
     template = env.get_template("mos.html.jinja2")
 
     args = get_args()
-    questions = gen_questions(form_id=args.form_id)
     random.seed(args.form_id)
+    questions = gen_questions(form_id=args.form_id)
+
 
     html = template.render(
         page_title=f"語音品質實驗 {args.form_id}",
