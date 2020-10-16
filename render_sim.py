@@ -44,16 +44,21 @@ def gen_questions(form_id=0):
         ref = os.path.join(refdir, target+'.wav')
         choice = [os.path.join(comp[0], basename), os.path.join(comp[comp_id], basename)]
         random.shuffle(choice)
-        ques.append([ref, choice])
+        if comp_id == 1:
+            typ = 0 if os.path.dirname(choice[0]) == comp[comp_id] else 1
+        elif comp_id == 2:
+            typ = 2 if os.path.dirname(choice[0]) == comp[comp_id] else 3
+        ques.append([ref, choice, typ])
 
     for i, q in enumerate(ques):
-        ref, choice = q
+        ref, choice, typ = q
         ret.append(
             {
                 "title": f"問題{i+1}",
                 "ref_path": ref,
                 "audio_paths": choice,
-                "name": f"q{i+1}"
+                "name": f"q{i+1}",
+                "type": typ
             }
         )
     return ret
@@ -87,6 +92,9 @@ def main():
         # ]
         questions=questions
     )
+    with open(f'sim_{args.form_id}', 'w') as f:
+        for q in questions:
+            f.write(f'{q["type"]}\t')
     print(html)
 
 

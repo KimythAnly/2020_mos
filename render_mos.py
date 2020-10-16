@@ -20,22 +20,32 @@ def gen_questions(form_id=0):
     lst2 = sorted(glob.glob('data/2enc/*.wav'))
     lst3 = sorted(glob.glob('data/proposed/*.wav'))
     lst4 = sorted(glob.glob('data/melgan/*.wav'))
+    types = {
+        'melgan': 0,
+        '1enc': 1,
+        '2enc': 2,
+        'proposed': 3
+    }
     # 180 - 36*3 - 12 = 60
     # 60 / 3 = 20
     lst = lst1 + lst2 + lst3 + lst4 + lst4 + lst1[:20] + lst2[:20] + lst3[:20]
+
     for i in range(18):
         j = (form_id + i*10) % len(lst)
         files.append(lst[j])
 
     random.shuffle(files)
+
     for i, f in enumerate(files):
-        method = os.path.dirname(f)
+        method = os.path.basename(os.path.dirname(f))
         basename = os.path.basename(f)
+        typ = types[method]
         ret.append(
             {
                 "title": f"問題{i+1}",
                 "audio_path": f,
-                "name": f"q{i+1}"
+                "name": f"q{i+1}",
+                "type": typ
             }
         )
     return ret
@@ -48,6 +58,7 @@ def main():
 
     args = get_args()
     questions = gen_questions(form_id=args.form_id)
+    random.seed(args.form_id)
 
     html = template.render(
         page_title=f"語音品質實驗 {args.form_id}",
@@ -67,9 +78,10 @@ def main():
         # ]
         questions=questions
     )
+    with open(f'mos_{args.form_id}', 'w') as f:
+        for q in questions:
+            f.write(f'{q["type"]}\t')
     print(html)
 
-
 if __name__ == "__main__":
-    random.seed(0)
     main()
